@@ -1,12 +1,12 @@
 {
   "required": true,
-  "package": "com.example.examplemod.mixin",
+  "package": "tfar.custommodelpredicates.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "examplemod.refmap.json",
+  "refmap": "custommodelpredicates.refmap.json",
   "mixins": [
   ],
   "client":[
-    "ExampleMixin"
+    "ItemOverrideListMixin"
   ],
   "injectors": {
     "defaultRequire": 1

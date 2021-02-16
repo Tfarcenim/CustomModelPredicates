@@ -1,0 +1,35 @@
+{
+  "loader": "custommodelpredicates:custommodelpredicates",
+  "gui_light":"front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "minecraft:item/gold_ingot"
+    }
+  },
+
+  "predicates" : [
+    {
+      "type": "name",
+      "name": "aw man",
+      "model" :  {"parent" :"item/gunpowder"}
+    },
+    {
+      "type": "count",
+      "count": ">2",
+      "model" :  {"parent" :"custommodelpredicates:item/three_gold_ingots"}
+    },
+    {
+      "type": "count",
+      "count": ">1",
+      "model" :  {"parent" :"custommodelpredicates:item/two_gold_ingots"}
+    },
+    {
+      "type": "nbt",
+      "tag_name" : "test_number",
+      "tag_type": "int",
+      "require" : "=1",
+      "model" :  {"parent" :"item/diamond"}
+    }
+  ]
+}
