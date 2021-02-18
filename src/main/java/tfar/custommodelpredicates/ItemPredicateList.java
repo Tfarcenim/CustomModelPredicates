@@ -1,6 +1,7 @@
 package tfar.custommodelpredicates;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.ModList;
 
 import java.util.function.Predicate;
 
@@ -138,5 +139,10 @@ public class ItemPredicateList {
         }
         //other types?
         throw new IllegalArgumentException("Unsupported NBT type: "+type);
+    }
+
+    public static Predicate<ItemStack> createModidPredicate(String modid) {
+        boolean loaded = ModList.get().isLoaded(modid);
+        return stack -> loaded;
     }
 }

@@ -49,6 +49,10 @@ public class ModelLoader implements IModelLoader<CustomPredicateModel> {
                         predicateList.add(new Pair<>(
                                 ItemPredicateList.createNBTPredicate(pred.get("tag_name").getAsString(), pred.get("tag_type").getAsString(), pred.get("require").getAsString()), blockModel));
                         break;
+                    case "modid":
+                        predicateList.add(new Pair<>(
+                                ItemPredicateList.createModidPredicate(pred.get("modid").getAsString()), blockModel));
+                        break;
                 }
             }
         }
