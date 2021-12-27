@@ -1,0 +1,18 @@
+{
+  "loader": "custommodelpredicates:custommodelpredicates",
+  "gui_light":"front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "minecraft:item/diamond_sword"
+    }
+  },
+
+  "predicates" : [
+    {
+      "type": "enchantment",
+      "enchant": "minecraft:fire_aspect",
+      "model" :  {"parent" :"examples:item/fire_diamond_sword"}
+    }
+  ]
+}

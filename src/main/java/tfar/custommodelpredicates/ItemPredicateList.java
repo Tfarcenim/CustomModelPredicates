@@ -1,8 +1,16 @@
 package tfar.custommodelpredicates;
 
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.ListNBT;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraftforge.fml.ModList;
 
+import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
 public class ItemPredicateList {
@@ -145,4 +153,13 @@ public class ItemPredicateList {
         boolean loaded = ModList.get().isLoaded(modid);
         return stack -> loaded;
     }
+
+    public static Predicate<ItemStack> createEnchantmentPredicate(String enchID) {
+        Enchantment ench = Registry.ENCHANTMENT.getOptional(new ResourceLocation(enchID)).orElseThrow(()-> new IllegalArgumentException(enchID +": not found"));
+        //no range requirements
+            return stack -> {
+                boolean b = EnchantmentHelper.getEnchantmentLevel(ench, stack) > 0;
+                return b;
+            };
+        }
 }

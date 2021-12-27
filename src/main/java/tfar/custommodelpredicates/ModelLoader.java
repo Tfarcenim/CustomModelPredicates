@@ -53,6 +53,10 @@ public class ModelLoader implements IModelLoader<CustomPredicateModel> {
                         predicateList.add(new Pair<>(
                                 ItemPredicateList.createModidPredicate(pred.get("modid").getAsString()), blockModel));
                         break;
+                    case "enchantment":
+                        predicateList.add(new Pair<>(
+                                ItemPredicateList.createEnchantmentPredicate(pred.get("enchant").getAsString()), blockModel));
+                        break;
                 }
             }
         }
